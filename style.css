@@ -84,4 +84,46 @@ h1{font-size:1.8rem; margin:6px 0 6px 0}
   .hero{grid-template-columns:1fr}
   .slider-view{width:92vw; height:220px}
   .portrait{width:120px; height:120px}
+}/* CSS */
+.music-player {
+  position: absolute;
+  top: 50px; /* profile picture er niche adjust koro */
+  left: 120px; /* profile picture er pase adjust koro */
+  display: flex;
+  align-items: center;
+  background: rgba(0,0,0,0.2); /* transparent background */
+  padding: 10px 15px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#playPause {
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  color: white;
+  font-size: 18px;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+  transition: all 0.3s ease;
+}
+
+#playPause.active {
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff, 0 0 60px #ffffff;
+}
+
+#musicSlider {
+  width: 150px;
+  cursor: pointer;
+  accent-color: #00ffff; /* slider thumb neon color */
+  background: rgba(255,255,255,0.1);
+  border-radius: 5px;
 }
