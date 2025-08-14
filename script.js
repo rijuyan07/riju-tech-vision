@@ -142,4 +142,29 @@ document.querySelectorAll('a[href]').forEach(a=>{
   });
 });
 /* fade-in on load */
-window.addEventListener('pageshow', ()=>{ document.body.style.opacity = 1 });
+window.addEventListener('pageshow', ()=>{ document.body.style.opacity = 1 });// JavaScript
+const music = document.getElementById("myMusic");
+const playPauseBtn = document.getElementById("playPause");
+const slider = document.getElementById("musicSlider");
+
+playPauseBtn.addEventListener("click", () => {
+  if(music.paused) {
+    music.play();
+    playPauseBtn.textContent = "⏸️";
+    playPauseBtn.classList.add("active"); // neon effect
+  } else {
+    music.pause();
+    playPauseBtn.textContent = "▶️";
+    playPauseBtn.classList.remove("active");
+  }
+});
+
+// Update slider as music plays
+music.addEventListener("timeupdate", () => {
+  slider.value = (music.currentTime / music.duration) * 100;
+});
+
+// Seek music when slider changes
+slider.addEventListener("input", () => {
+  music.currentTime = (slider.value / 100) * music.duration;
+});
